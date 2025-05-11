@@ -14,11 +14,20 @@ import NotFoundPageComponent from './components/NotFoundPageComponent'
 
 function App() {
   const BASE_URL = import.meta.env.VITE_BACKEND_URL;
-
+  
 fetch(`${BASE_URL}/some-endpoint`)
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
   .then(data => console.log(data))
-  .catch(error => console.error("API çağrısı hatası:", error));
+  .catch(error => {
+    console.error("API çağrısı hatası:", error);
+    alert("Bir hata oluştu. Lütfen daha sonra tekrar deneyin.");
+  });
+
 
   return (
  <div>
