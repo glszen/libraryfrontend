@@ -1,5 +1,4 @@
 # Netlify yapılandırma dosyası
-# API isteklerini backend sunucusuna yönlendirir
 
 [[redirects]]
   from = "/api/*"
