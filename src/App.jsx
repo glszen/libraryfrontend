@@ -13,21 +13,21 @@ import {Routes, Route} from 'react-router-dom'
 import NotFoundPageComponent from './components/NotFoundPageComponent'
 
 function App() {
-  const BASE_URL = import.meta.env.VITE_BACKEND_URL || 'https://retired-vanda-glszen-ba299dbf.koyeb.app/api/v1';
+//   const BASE_URL = import.meta.env.VITE_BACKEND_URL || 'https://retired-vanda-glszen-ba299dbf.koyeb.app/api/v1';
 
-if (BASE_URL) {
-  fetch(`${BASE_URL}/some-endpoint`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(data => console.log(data))
-    .catch(error => {
-      console.error("API çağrısı hatası:", error);
-    });
-}
+// if (BASE_URL) {
+//   fetch(`${BASE_URL}/some-endpoint`)
+//     .then(response => {
+//       if (!response.ok) {
+//         throw new Error(`HTTP error! status: ${response.status}`);
+//       }
+//       return response.json();
+//     })
+//     .then(data => console.log(data))
+//     .catch(error => {
+//       console.error("API çağrısı hatası:", error);
+//     });
+// }
 
   return (
  <div>
