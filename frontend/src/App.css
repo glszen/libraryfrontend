@@ -1,0 +1,179 @@
+body {
+  background: linear-gradient(to right bottom, #eabbf0, #c4f299); /* Arka plan gradyanı */
+  background-repeat: no-repeat; /* Tekrar etmesini engelliyoruz */
+  background-size: cover; /* Arka planı tüm alana yayıyoruz */
+  background-attachment: fixed; /* Arka planı sabitliyoruz (scroll ile hareket etmez) */
+}
+
+.mulish {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.mulish2 {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.navfont {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.containera {
+  width: 10%;
+  height: auto;
+  margin: 150px auto; /* Üstte 20px boşluk ekler */
+  padding: 20px;
+  background: linear-gradient(
+    to right bottom,
+    rgba(235, 223, 255, 0.685),
+    rgba(240, 240, 240, 0.6)  ); /* Container için gradyan */
+  border: rgba(240, 240, 240, 0.8);
+  border-radius: 60px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+
+h2 {
+  font-size: 26px;
+  margin: 20px 0;
+  text-align: center;
+  height: 15vh;
+  small {
+    font-size: 0.5em;
+    
+  }
+}
+
+.responsive-table {
+  li {
+    border-radius: 10px;
+    padding: 35px 500px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  .table-header {
+    background: rgba(230, 231, 167, 0.2); /* Transparan beyaz arka plan */
+    backdrop-filter: blur(30px); /* Arka plan bulanıklığı */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding-left: 40px;
+  }
+  .table-row {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+    padding-left: 40px;
+  }
+  .col-1 {
+    flex-basis: 30%; /* Daha geniş */
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+    font-size: 16px;
+    justify-content: center;}
+    
+  .col-2 {
+    flex-basis: 25%; /* Daha geniş */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .col-3 {
+    flex-basis: 25%; /* Daha geniş */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .col-4 {
+    flex-basis: 30%; /* Daha geniş */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .col-5 {
+    flex-basis: 20%; /* Daha geniş */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .col-6 {
+    flex-basis: 15%; /* Daha geniş */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .col-7 {
+    flex-basis: 16%; /* Daha geniş */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .col-8 {
+    flex-basis: 25%; /* Daha geniş */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .col-9 {
+    flex-basis: 15%; /* Daha geniş */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .col-10 {
+    flex-basis: 40%; /* Daha geniş */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .welcome{
+    width: 65%;
+    height: 15vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background: rgba(234, 87, 83, 0.7);
+    box-shadow: 0 7px 2rem #ea5753;
+    border-radius: 0.8rem;
+  
+  }
+ 
+}
+
+.p4{
+  width: 88%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+}

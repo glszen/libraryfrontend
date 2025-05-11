@@ -1,0 +1,178 @@
+
+
+nav {
+    position: fixed; /* Navbarı sabitliyoruz */
+    top: 0; /* En üste yerleştiriyoruz */
+    left: 200px; /* Sol hizalıyoruz */
+    z-index: 98; /* Diğer içeriklerin üstünde görünmesi için z-index */
+    width: 80%; /* Genişliği tam ekran yapıyoruz */
+    background: rgba(255, 255, 255, 0.2); /* Transparan beyaz arka plan */
+    backdrop-filter: blur(10px); /* Arka plan bulanıklığı */
+    border-radius: 10px; /* Kenar yuvarlama */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+    display: flex; /* Flexbox kullanarak içeriği hizalıyoruz */
+    justify-content: center; /* İçeriği yatay olarak ortalıyoruz */
+    align-items: center;
+}
+
+nav .wrapper {
+    max-width: 1200px; /* İçeriğin genişliğini sınırlıyoruz */
+    width: 100%; /* Kapsayıcı genişliği */
+    display: flex; /* Flexbox kullanarak içeriği hizalıyoruz */
+    align-items: center; /* Dikey olarak ortalıyoruz */
+    justify-content: space-between; /* İçeriği iki yana yayıyoruz */
+    padding: 0 20px; /* Kenarlardan boşluk bırakıyoruz */
+}
+
+.mulish {
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+.wrapper .logo a {
+  color: #f2f2f2;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  
+}
+
+.wrapper .nav-links {
+  display: inline-flex;
+  
+}
+
+.nav-links li {
+  list-style: none;
+  
+}
+
+.nav-links li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 9px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background: #3A3B3C;
+  
+}
+
+.nav-links .mobile-item {
+  display: none;
+}
+
+.nav-links .drop-menu {
+  position: absolute;
+  background: #242526;
+  width: 180px;
+  line-height: 45px;
+  top: 85px;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.content .row img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content .row header {
+  color: #f2f2f2;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.wrapper .btn {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+.wrapper .btn.close-btn {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+}
+
+@media screen and (max-width: 970px) {
+  .wrapper .btn {
+    display: block;
+  }
+
+  .wrapper .nav-links {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 350px;
+    top: 0;
+    left: -100%;
+    background: #242526;
+    display: block;
+    padding: 50px 10px;
+    line-height: 50px;
+    overflow-y: auto;
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.18);
+    transition: all 0.3s ease;
+  }
+
+
+  .nav-links .desktop-item {
+    display: none;
+  }
+
+  .nav-links .mobile-item {
+    display: block;
+    color: #f2f2f2;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links .mobile-item:hover {
+    background: #3A3B3C;
+  }
+
+
+
+  .content .row header {
+    font-size: 19px;
+  }
+}
+
+nav input {
+  display: none;
+}
+
+.body-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  padding: 0 30px;
+}
+
+.body-text div {
+  font-size: 45px;
+  font-weight: 600;
+}
+
+.logo {
+    width: 5vw;
+}
