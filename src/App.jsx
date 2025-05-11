@@ -13,12 +13,6 @@ import {Routes, Route} from 'react-router-dom'
 import NotFoundPageComponent from './components/NotFoundPageComponent'
 
 function App() {
-  const BASE_URL = import.meta.env.VITE_BACKEND_URL;
-
-fetch(`${BASE_URL}/some-endpoint`)
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error("API çağrısı hatası:", error));
 
   return (
  <div>
