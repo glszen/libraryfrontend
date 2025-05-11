@@ -1,59 +1,60 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit' //Book işlemleri için slice oluşturma işlemi yapıyoruz.
-// Redux Toolkit kullanarak slice oluşturma işlemi yapıyoruz.
-import axios from 'axios'; //Http isteklerini buradan Axios ile yapacağız.
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-const mystate = { 
-    books : [],
+// Backend URL'sini merkezi bir değişken olarak tanımlıyoruz
+const BASE_URL = 'https://retired-vanda-glszen-ba299dbf.koyeb.app/api/v1';
+
+const initialState = { 
+    books: [],
     loading: false
-}
+};
 
-export const getAllBooks = createAsyncThunk('books', async() => { //Kitap okuma işlemi yapıyoruz.
-   const response = await axios.get("http://localhost:8080/api/v1/books");
-   console.log(response.data); //Dönen veriyi konsola yazdırıyoruz.
-   return response.data; //Dönen veriyi döndürüyoruz.
-})
-
-export const updateBook = createAsyncThunk('updateBook', async({id, updatedBook}) => { //Kitap güncelleme işlemi yapıyoruz.
-    const response = await axios.put(`http://localhost:8080/api/v1/books/${id}`, updatedBook);
-    console.log(response.data);
-    return response.data; //Dönen veriyi döndürüyoruz.
-})
-
-export const deleteBook = createAsyncThunk('deleteBook', async(id) => {
-    await axios.delete(`http://localhost:8080/api/v1/books/${id}`); //Kitap silme işlemi yapıyoruz.
-    return id; //Silinen kitabın id'sini döndürüyoruz.
-})
-
-export const addBook = createAsyncThunk('addBook', async(newBook) => {
-    const response = await axios.post(`http://localhost:8080/api/v1/books`, newBook); //Kitap ekleme işlemi yapıyoruz.
+// Tüm kitapları getirme işlemi
+export const getAllBooks = createAsyncThunk('books/getAll', async () => {
+    const response = await axios.get(`${BASE_URL}/books`);
     return response.data;
-})
+});
 
+// Kitap güncelleme işlemi
+export const updateBook = createAsyncThunk('books/update', async ({ id, updatedBook }) => {
+    const response = await axios.put(`${BASE_URL}/books/${id}`, updatedBook);
+    return response.data;
+});
+
+// Kitap silme işlemi
+export const deleteBook = createAsyncThunk('books/delete', async (id) => {
+    await axios.delete(`${BASE_URL}/books/${id}`);
+    return id;
+});
+
+// Yeni kitap ekleme işlemi
+export const addBook = createAsyncThunk('books/add', async (newBook) => {
+    const response = await axios.post(`${BASE_URL}/books`, newBook);
+    return response.data;
+});
+
+// Redux slice tanımı
 export const bookSlice = createSlice({
     name: 'book',
-    initialState: mystate,
-    reducers:{
-        //Http isteği olmazsa bu reducer'ı kullanacağız.
-    },
+    initialState,
+    reducers: {},
     extraReducers: (builder) => {
-        //Http istekleri için extraReducers kullanıyoruz.
         builder.addCase(getAllBooks.fulfilled, (state, action) => {
-            state.books = action.payload; //Dönen veriyi state'e atıyoruz.
-    })
-    builder.addCase(updateBook.fulfilled, (state, action) => {
-        const index = state.books.findIndex((book) => book.id === action.payload.id); //Güncellenen kitabın index'ini buluyoruz.
-        if (index !== -1){
-            state.books[index] = action.payload; //Güncellenen kitabı state'e atıyoruz.
-        }
-    })
-    builder.addCase(deleteBook.fulfilled, (state,action)=> {
-        state.books = state.books.filter((book) => book.id !== action.payload);
-    })
-    builder.addCase(addBook.fulfilled, (state, action) => {
-        state.books.push(action.payload); //Yeni kitabı state'e ekliyoruz.
-    })
-}
-})
+            state.books = action.payload;
+        });
+        builder.addCase(updateBook.fulfilled, (state, action) => {
+            const index = state.books.findIndex((book) => book.id === action.payload.id);
+            if (index !== -1) {
+                state.books[index] = action.payload;
+            }
+        });
+        builder.addCase(deleteBook.fulfilled, (state, action) => {
+            state.books = state.books.filter((book) => book.id !== action.payload);
+        });
+        builder.addCase(addBook.fulfilled, (state, action) => {
+            state.books.push(action.payload);
+        });
+    }
+});
 
-export const { } = bookSlice.actions  
-export default bookSlice.reducer //Reducer'ı dışarı aktarıyoruz.
+export default bookSlice.reducer;
