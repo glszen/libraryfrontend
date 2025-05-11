@@ -1,8 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Backend URL'sini merkezi bir değişken olarak tanımlıyoruz
-const BASE_URL = 'https://retired-vanda-glszen-ba299dbf.koyeb.app/api/v1';
+// Geliştirme ortamını kontrol edin
+const isDevelopment = process.env.NODE_ENV === 'development';
+
+// Ortama göre BASE_URL belirleyin
+const BASE_URL = isDevelopment 
+  ? 'https://retired-vanda-glszen-ba299dbf.koyeb.app/api/v1'  // Geliştirme ortamı
+  : '/api';  // Üretim ortamı (Netlify)
 
 const initialState = { 
     authors: [],

@@ -1,4 +1,3 @@
-
 import './App.css'
 import { useSelector, useDispatch } from 'react-redux'
 import BookComponent from './components/BookComponent'
@@ -13,25 +12,21 @@ import {Routes, Route} from 'react-router-dom'
 import NotFoundPageComponent from './components/NotFoundPageComponent'
 
 function App() {
-
-  const BASE_URL = import.meta.env.VITE_BACKEND_URL || 'https://retired-vanda-glszen-ba299dbf.koyeb.app/api/v1';
+  // BASE_URL değişkenini kaldırdık çünkü kullanılmıyor
 
   return (
- <div>
-  <NavbarComponents />
-  <Routes> // React Router ile yönlendirme yapıyoruz.
-    <Route path="/" element={<HomeComponent />} />
-    <Route path="/books" element={<BookComponent />} />
-    <Route path="/authors" element={<AuthorComponent />} />
-    <Route path="/categories" element={<CategoryComponent />} />
-    <Route path="/publishers" element={<PublisherComponent />} />
-    <Route path="/book-borrowing" element={<BookBorrowingComponent />} />
-    <Route path="*" element={<NotFoundPageComponent />} />
-
-  </Routes>
-
-
- </div>
+   <div>
+    <NavbarComponents />
+    <Routes> {/* React Router ile yönlendirme yapıyoruz */}
+      <Route path="/" element={<HomeComponent />} />
+      <Route path="/books" element={<BookComponent />} />
+      <Route path="/authors" element={<AuthorComponent />} />
+      <Route path="/categories" element={<CategoryComponent />} />
+      <Route path="/publishers" element={<PublisherComponent />} />
+      <Route path="/book-borrowing" element={<BookBorrowingComponent />} />
+      <Route path="*" element={<NotFoundPageComponent />} />
+    </Routes>
+   </div>
   )
 }
 
