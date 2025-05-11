@@ -32,3 +32,6 @@ This frontend application provides an intuitive interface for library staff to m
    ```bash
    git clone https://github.com/yourusername/libraryfrontend.git
    cd libraryfrontend
+
+## Backend
+https://github.com/glszen/librarybackend
