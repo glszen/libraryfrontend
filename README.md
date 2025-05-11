@@ -2,8 +2,10 @@
 
 A modern web application for managing library resources including books, authors, categories, publishers, and book borrowing records.
 
-## Overview
+## LIVE
+https://libraryfrontend1.netlify.app/
 
+## Overview
 This frontend application provides an intuitive interface for library staff to manage all aspects of a library's collection and borrowing operations. It connects to a REST API backend to handle data persistence and business logic.
 
 ## Features
