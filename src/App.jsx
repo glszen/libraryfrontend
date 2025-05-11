@@ -13,7 +13,7 @@ import {Routes, Route} from 'react-router-dom'
 import NotFoundPageComponent from './components/NotFoundPageComponent'
 
 function App() {
-  const BASE_URL = 'https://retired-vanda-glszen-ba299dbf.koyeb.app';
+  const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
 fetch(`${BASE_URL}/some-endpoint`)
   .then(response => response.json())
