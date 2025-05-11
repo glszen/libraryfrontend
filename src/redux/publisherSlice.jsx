@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 // Backend URL'sini merkezi bir değişken olarak tanımlıyoruz
-const BASE_URL = 'https://retired-vanda-glszen-ba299dbf.koyeb.app/api/v1';
+const BASE_URL = 'https://retired-vanda-glszen-ba299dbf.koyeb.app/api';
 
 const initialState = { 
     publishers: [],
