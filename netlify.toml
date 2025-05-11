@@ -1,5 +1,16 @@
+# Netlify yapılandırma dosyası
+# API isteklerini backend sunucusuna yönlendirir
+
 [[redirects]]
   from = "/api/*"
   to = "https://retired-vanda-glszen-ba299dbf.koyeb.app/api/v1/:splat"
   status = 200
   force = true
+  headers = {Access-Control-Allow-Origin = "*"}
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
+    Access-Control-Allow-Headers = "Origin, X-Requested-With, Content-Type, Accept"
