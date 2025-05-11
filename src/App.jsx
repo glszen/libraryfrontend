@@ -13,9 +13,16 @@ import {Routes, Route} from 'react-router-dom'
 import NotFoundPageComponent from './components/NotFoundPageComponent'
 
 function App() {
+ const BASE_URL = 'https://retired-vanda-glszen-ba299dbf.koyeb.app/api';
 
-fetch('https://retired-vanda-glszen-ba299dbf.koyeb.app/api/some-endpoint')
-  .then(response => response.json())
+
+fetch(`${BASE_URL}/v1/authors`)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
   .then(data => console.log(data))
   .catch(error => console.error("API çağrısı hatası:", error));
 
