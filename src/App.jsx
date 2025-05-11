@@ -14,22 +14,21 @@ import NotFoundPageComponent from './components/NotFoundPageComponent'
 
 function App() {
 
-const BASE_URL = import.meta.env.VITE_BACKEND_URL || 'https://retired-vanda-glszen-ba299dbf.koyeb.app/api';
+  const BASE_URL = import.meta.env.VITE_BACKEND_URL || 'https://retired-vanda-glszen-ba299dbf.koyeb.app/api/v1';
 
-if (BASE_URL) {
-  fetch(`${BASE_URL}/some-endpoint`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(data => console.log(data))
-    .catch(error => {
-      console.error("API çağrısı hatası:", error);
-    });
-}
-
+ useEffect(() => {
+    // Gerçek bir endpoint kullanın, örneğin: /books veya /authors
+    console.log("API URL:", BASE_URL);
+    
+    // API testi istemiyorsanız bu bloğu silebilirsiniz
+    // fetch(`${BASE_URL}/books`)
+    //   .then(response => {
+    //     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    //     return response.json();
+    //   })
+    //   .then(data => console.log("API yanıtı:", data))
+    //   .catch(error => console.error("API hatası:", error));
+  }, []);
   return (
  <div>
   <NavbarComponents />
