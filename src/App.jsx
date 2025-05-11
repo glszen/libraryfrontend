@@ -1,7 +1,7 @@
 
 import './App.css'
 import { useSelector, useDispatch } from 'react-redux'
-import BookComponent from './components/bookComponent'
+import BookComponent from './components/BookComponent'
 import AuthorComponent from './components/AuthorComponents'
 import CategoryComponent from './components/CategoryComponent'
 import PublisherComponent from './components/PublisherComponent'
