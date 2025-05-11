@@ -14,10 +14,7 @@ import NotFoundPageComponent from './components/NotFoundPageComponent'
 
 function App() {
 
-  const dispatch = useDispatch()
-  const backendUrl = import.meta.env.VITE_BACKEND_URL;
-
-fetch(`${backendUrl}/api/some-endpoint`)
+fetch('https://retired-vanda-glszen-ba299dbf.koyeb.app/api/some-endpoint')
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error("API çağrısı hatası:", error));
